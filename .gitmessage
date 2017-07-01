@@ -1,0 +1,26 @@
+
+
+# Git Commit Message Format
+#   <type>(<scope>): <subject>
+#   <BLANK LINE>
+#   <body>
+#   <BLANK LINE>
+#   <footer>
+#
+# Git Commit Message Guides:
+#   http://7u2rjq.com1.z0.glb.clouddn.com/GitCommitMessageConventions.pdf
+#   https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit
+#   http://chris.beams.io/posts/git-commit/
+#
+# Type keywrods: feat, fix, docs, style, refactor, perf, test, chore, revert
+# Changelog keywrods: Added, Changed, Breaks, Deprecated, Removed, Fixed, Security
+#
+# Example:
+#   fix($compile): couple of unit tests for IE9
+#
+#   Older IEs serialize html uppercased, but IE9 does not...
+#   not allow to user regexps for throw expectations.
+#
+#   Closes #392, #400
+#   Breaks foo.bar api, foo.baz should be used instead#
+#

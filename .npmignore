@@ -1,0 +1,7 @@
+.vscode
+node_modules/
+res/
+coverage/
+src/
+tinypng-config.json
+lib/__tests__

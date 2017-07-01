@@ -1,0 +1,5 @@
+node_modules/
+res/
+coverage/
+lib/
+tinypng-tokens.json
