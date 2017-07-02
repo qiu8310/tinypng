@@ -16,10 +16,9 @@ cli({
   usage: 'tinypng --config <configFile> <files>',
   version: require('../package.json').version,
   desc: [
-    '配置文件应该是个 JSON 或 JS 文件，默认为当前目录或package.json目录下的tinypng.json',
     `
+  配置文件示例（配置文件中，如果是相对目录，则是相对于当前配置文件所在的文件夹的目录）
   {
-    // 配置文件中，如果是相对目录，则是相对于当前配置文件所在的文件夹的目录
     "tokens": ["...", "..."],
     "backupDir": "/path/to/backup/directory",
     "outputDir": "/path/to/output/directory",
