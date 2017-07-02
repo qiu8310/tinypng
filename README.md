@@ -80,7 +80,7 @@ tinypng --config /path/to/config/file  /path/to/image1
 ```
 
 #### 命令行上可以使用的选项
-除了支持上面 `[构造函数 Tinypng 的选项](#base-options)` 中指定的所有参数外，还支持下面几个：
+除了支持上面 [构造函数 Tinypng 的选项](#base-options) 中指定的所有参数外，还支持下面几个：
 
 | 字段           | 类型       |  说明  |
 | --------      | -----      | ---- |
@@ -106,7 +106,7 @@ const TinypngWebpackPlugin = require('@mora/tinypng').TinypngWebpackPlugin
 ```
 
 #### 在webpack中的配置
-一样支持上面 `[构造函数 Tinypng 的选项](#base-options)` 中指定的所有参数，同时支持命令行模块中提到的配置文件 tinypng-config.js 或 tinypng-config.json，另外还支持一个 `filter` 参数
+一样支持上面 [构造函数 Tinypng 的选项](#base-options) 中指定的所有参数，同时支持命令行模块中提到的配置文件 tinypng-config.js 或 tinypng-config.json，另外还支持一个 `filter` 参数
 
 | 字段           | 类型       |  说明  |
 | --------      | -----      | ----- |
