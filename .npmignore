@@ -3,6 +3,6 @@ node_modules/
 res/
 coverage/
 src/
-tinypng-config.json
+tinypng-tokens.json
 lib/__tests__
 __mocks__
