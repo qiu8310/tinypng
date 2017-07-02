@@ -99,21 +99,15 @@ export function runProgressTasks(tasks: any[], callback, {indent = ''} = {}) {
 
   let frames = ['-', '\\', '|', '/']
   let frameIndex = 0
-  let currentAction = ''
-  let currentFilename = ''
   let finishedCount = 0
 
   let refresh = () => {
-    let field = currentFilename ? `${currentAction}${currentFilename}` : ''
-    logUpdate(`${indent}Tinypng processing ${frames[frameIndex = ++frameIndex % frames.length]}  ${field}`)
+    logUpdate(`${indent}Tinypng processing ${finishedCount}/${total} ${frames[frameIndex = ++frameIndex % frames.length]}`)
   }
 
   let sid = setInterval(refresh, 80)
 
-  // let bar = new ProgressBar(indent + 'Tinypng: :bar :percent :name', {total: total + 1, width: 20})
   let next = (name) => {
-    currentAction = 'done '
-    currentFilename = name
     finishedCount++
 
     if (finishedCount === total) {
@@ -123,9 +117,6 @@ export function runProgressTasks(tasks: any[], callback, {indent = ''} = {}) {
     }
   }
 
-  tasks.forEach(task => {
-    currentAction = 'doing '
-    currentFilename = task(next)
-  })
+  tasks.forEach(task => task(next))
   refresh()
 }

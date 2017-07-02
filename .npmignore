@@ -5,3 +5,4 @@ coverage/
 src/
 tinypng-config.json
 lib/__tests__
+__mocks__

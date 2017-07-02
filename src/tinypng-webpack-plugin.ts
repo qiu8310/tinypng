@@ -31,7 +31,7 @@ export default class TinypngWebpackPlugin {
     this.tp = new Tinypng(options)
 
     this.filter = options.filter || function(m) {
-      return m.rawRequest && /\.(png|jpg|jpeg|svg)$/.test(m.resource)
+      return m.rawRequest && /\.(png|jpg|jpeg|svg)$/i.test(m.resource)
     }
   }
 

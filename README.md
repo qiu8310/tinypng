@@ -80,7 +80,7 @@ tinypng --config /path/to/config/file  /path/to/image1
 ```
 
 #### 命令行上可以使用的选项
-除了支持所有上面 [构造函数 Tinypng 的选项](#base-options) 中指定的参数外，还支持下面几个：
+除了支持上面 `[构造函数 Tinypng 的选项](#base-options)` 中指定的所有参数外，还支持下面几个：
 
 | 字段           | 类型       |  说明  |
 | --------      | -----      | ---- |
@@ -106,12 +106,29 @@ const TinypngWebpackPlugin = require('@mora/tinypng').TinypngWebpackPlugin
 ```
 
 #### 在webpack中的配置
-一样支持所有上面 [构造函数 Tinypng 的选项](#base-options) 中指定的参数，同时支持命令行模块中提到的配置文件 tinypng-config.js 或 tinypng-config.json，另外还支持一个 `filter` 参数
+一样支持上面 `[构造函数 Tinypng 的选项](#base-options)` 中指定的所有参数，同时支持命令行模块中提到的配置文件 tinypng-config.js 或 tinypng-config.json，另外还支持一个 `filter` 参数
 
 | 字段           | 类型       |  说明  |
 | --------      | -----      | ----- |
 | config        | `string`   |  指定配置文件  |
 | filter        | `function` |  过滤出可以压缩的 module 来 |
+
+
+## 推荐用法
+
+在项目根目录下放一个 `tinypng-config.json` 文件，并设置下面几个参数：
+
+```json
+{
+  "tokens": ["...", "..."],
+  "cacheDir": "/path/to/cache/directory",
+  "recordFile": "/path/to/record/file",
+}
+```
+
+这样无论你是用命令行，还是用 webpack，都无需配置任何其它参数；同时此配置开启了缓存，所以用 webpack 的时候开发环境也可以启用此 plugin。
+
+**另外：建议将 `cacheDir` 加入到 git 中，而 `recordFile` 不要加入到 git；这样 cacheDir 可以多人共享，`recordFile` 不加了 git 主要是它更新比较频繁，而且可能会暴露 token 信息**
 
 
 ## TODO LIST

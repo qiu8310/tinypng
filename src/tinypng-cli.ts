@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import * as cli from 'mora-scripts/libs/tty/cli'
 import * as table from 'mora-scripts/libs/tty/table'
 import * as clog from 'mora-scripts/libs/sys/clog'
@@ -50,7 +52,7 @@ cli({
   }
 
   // svg 文件不需要 token
-  if (!config.tokens.length && !config._.every(file => isSvgFile(file))) {
+  if ((!config.tokens || !config.tokens.length) && !config._.every(file => isSvgFile(file))) {
     return this.error('No available tokens')
   }
 
