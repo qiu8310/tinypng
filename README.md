@@ -10,16 +10,14 @@
 
 ## 背景
 
-  当前市面上有很多图片压缩工具，但[TinyPNG](https://tinypng.com/)是我目前所遇到的在保证压缩质量的前提下
-  压缩效率最好的一款压缩工具。官方解释说：
+  当前市面上有很多图片压缩工具，但[TinyPNG](https://tinypng.com/)是我目前所遇到的在保证压缩质量的前提下压缩效率最好的一款压缩工具。官方解释说：
 
   > TinyPNG uses smart lossy compression techniques to reduce the file size of your PNG files.
   > By selectively decreasing the number of colors in the image, fewer bytes are required to
   > store the data. The effect is nearly invisible but it makes a very large difference in
   > file size!
 
-  不过 TinyPNG 并没有开源，所以它的具体压缩算法不得而知，我们只能通过调用它提供的 API 来压缩图片，而每个月每
-  个帐户只能调用 500 次它的 API，如果想调用更多次数，你需要付费升级你的帐户。
+  不过 TinyPNG 并没有开源，所以它的具体压缩算法不得而知，我们只能通过调用它提供的 API 来压缩图片，而每个月每个帐户只能调用 500 次它的 API，如果想调用更多次数，你需要付费升级你的帐户。
 
   **所以，为了可以得到 TinyPNG 高效率压缩的图片，同时又希望无限制的免费调用它的 API，就有了此工具**
 
@@ -70,9 +68,7 @@ npm i -g @mora/tinypng
 tinypng --tokens token1,token2 /path/to/image1 /path/to/image2
 ```
 
-如果不想每次都在命令行上带参数，可以使用配置文件，程序默认会在 『当前目录』，『第一个含有 package.json 的父级目录』，
-『当前系统用户的 HOME 目录』三个目录中按顺序查找 tinypng-config.js 或 tinypng-config.json 文件，以第一个找到
-的文件为准；当然你也可以通过在命令行上用 `--config` 参数来指定配置文件的路径，比如：
+如果不想每次都在命令行上带参数，可以使用配置文件，程序默认会在 『当前目录』，『第一个含有 package.json 的父级目录』，『当前系统用户的 HOME 目录』三个目录中按顺序查找 tinypng-config.js 或 tinypng-config.json 文件，以第一个找到的文件为准；当然你也可以通过在命令行上用 `--config` 参数来指定配置文件的路径，比如：
 
 ```base
 tinypng [options]  <file1, file2, file3, ...>
@@ -106,7 +102,7 @@ const TinypngWebpackPlugin = require('@mora/tinypng').TinypngWebpackPlugin
 ```
 
 #### 在webpack中的配置
-一样支持上面 [构造函数 Tinypng 的选项](#base-options) 中指定的所有参数，同时支持命令行模块中提到的配置文件 tinypng-config.js 或 tinypng-config.json，另外还支持一个 `filter` 参数
+一样支持上面 [构造函数 Tinypng 的选项](#base-options) 中指定的所有参数，同时支持命令行模块中提到的配置文件  tinypng-config.js 或 tinypng-config.json，另外还支持一个 `filter` 参数
 
 | 字段           | 类型       |  说明  |
 | --------      | -----      | ----- |
