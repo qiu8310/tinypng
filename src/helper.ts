@@ -74,6 +74,7 @@ export function getConfig(options: any = {}) {
     if (config.configDir && /(Dir|File)$/.test(key)) config[key] = path.resolve(config.configDir, config[key])
   })
   if (config.resize) config.resize = parseConfigResize(config.resize)
+  if (typeof config.tokens === 'string') config.tokens = config.tokens ? config.tokens.split(',') : []
   return config
 }
 

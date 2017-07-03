@@ -1595,7 +1595,7 @@ jest-changed-files@^20.0.3:
   version "20.0.3"
   resolved "http://registry.npm.taobao.org/jest-changed-files/download/jest-changed-files-20.0.3.tgz#9394d5cc65c438406149bef1bf4d52b68e03e3f8"
 
-jest-cli@^20.0.4:
+jest-cli@20.0.4, jest-cli@^20.0.4:
   version "20.0.4"
   resolved "http://registry.npm.taobao.org/jest-cli/download/jest-cli-20.0.4.tgz#e532b19d88ae5bc6c417e8b0593a6fe954b1dc93"
   dependencies:

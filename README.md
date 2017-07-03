@@ -67,8 +67,7 @@ tinypng.tiny('/path/to/some/image/file') // 此处也可以提供文件 Buffer
 npm i -g @mora/tinypng
 
 # 使用
-## 注意，图片文件名不要放在 --tokens 后面，否则会把图片名字当作 token 处理了
-tinypng /path/to/image1 /path/to/image2  --tokens token1 token2
+tinypng --tokens token1,token2 /path/to/image1 /path/to/image2
 ```
 
 如果不想每次都在命令行上带参数，可以使用配置文件，程序默认会在 『当前目录』，『第一个含有 package.json 的父级目录』，
@@ -76,7 +75,7 @@ tinypng /path/to/image1 /path/to/image2  --tokens token1 token2
 的文件为准；当然你也可以通过在命令行上用 `--config` 参数来指定配置文件的路径，比如：
 
 ```base
-tinypng --config /path/to/config/file  /path/to/image1
+tinypng [options]  <file1, file2, file3, ...>
 ```
 
 #### 命令行上可以使用的选项
