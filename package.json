@@ -1,6 +1,6 @@
 {
   "name": "@mora/tinypng",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "基于 tinypng 封装的一个支持 `nodejs`、`命令行`和`webpack`的图片压缩工具",
   "main": "lib/index.js",
   "bin": {
@@ -55,9 +55,8 @@
   "dependencies": {
     "fs-extra": "~3.0.1",
     "log-update": "2.0.0",
-    "mora-common": "0.0.9",
+    "mora-common": "0.0.10",
     "mora-scripts": "1.6.4",
-    "pretty-bytes": "~4.0.2",
     "svgo": "~0.7.2",
     "tinify": "~1.5.0",
     "webpack-sources": "~1.0.1"

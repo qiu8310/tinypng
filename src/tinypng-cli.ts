@@ -3,9 +3,9 @@
 import * as cli from 'mora-scripts/libs/tty/cli'
 import * as table from 'mora-scripts/libs/tty/table'
 import * as clog from 'mora-scripts/libs/sys/clog'
+import pretty from 'mora-common/util/prettyBytes'
 import * as path from 'path'
 import * as fs from 'fs-extra'
-import * as pretty from 'pretty-bytes'
 
 import {getConfig, isSvgFile, writeFileSync, runProgressTasks} from './helper'
 import Tinypng from './tinypng'

@@ -2084,9 +2084,9 @@ minimist@^1.1.1, minimist@^1.2.0:
   dependencies:
     minimist "0.0.8"
 
-mora-common@0.0.9:
-  version "0.0.9"
-  resolved "http://registry.npm.taobao.org/mora-common/download/mora-common-0.0.9.tgz#0dd378ab02b7a7ce6c22098597581b8cfcda15a9"
+mora-common@0.0.10:
+  version "0.0.10"
+  resolved "http://registry.npm.taobao.org/mora-common/download/mora-common-0.0.10.tgz#e78cce73bb0764511f8ced0fbe56966c89bb6b07"
 
 mora-scripts@1.6.4:
   version "1.6.4"
@@ -2417,10 +2417,6 @@ prelude-ls@~1.1.2:
 preserve@^0.2.0:
   version "0.2.0"
   resolved "http://registry.npm.taobao.org/preserve/download/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
-
-pretty-bytes@~4.0.2:
-  version "4.0.2"
-  resolved "http://registry.npm.taobao.org/pretty-bytes/download/pretty-bytes-4.0.2.tgz#b2bf82e7350d65c6c33aa95aaa5a4f6327f61cd9"
 
 pretty-format@^20.0.3:
   version "20.0.3"
