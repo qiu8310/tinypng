@@ -18,14 +18,21 @@ export interface IWebpackModule {
 export declare type IFilter = (m: IWebpackModule) => boolean
 
 export interface ITinypngWebpackOption extends ITinypngOption {
-  filter?: IFilter
+  /**
+   * 过滤出你需要使用压缩的 module，默认是压缩带 png/jpg/jpeg/svg 后缀的文件
+   */
+  filter?: IFilter,
+  /**
+   * 是否不需要输出 tinypng 的压缩进度
+   */
+  quiet?: boolean
 }
 
 export default class TinypngWebpackPlugin {
   tp: Tinypng
   filter: IFilter
 
-  constructor(options: ITinypngWebpackOption) {
+  constructor(public options: ITinypngWebpackOption) {
     options = getConfig(options)
     if (!options.tokens || !Array.isArray(options.tokens) || options.tokens.length === 0) throw new Error('No tokens option')
     this.tp = new Tinypng(options)
@@ -71,7 +78,11 @@ export default class TinypngWebpackPlugin {
               })
             return file.rawRequest
           }),
-          callback
+          callback,
+          {
+            indent: '',
+            quiet: self.options.quiet
+          }
         )
       })
     })

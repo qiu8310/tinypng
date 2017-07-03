@@ -86,6 +86,7 @@ tinypng [options]  <file1, file2, file3, ...>
 | config        | `string`   |  指定配置文件  |
 | backupDir     | `string`   |  备份目录，源文件会保存在这里，压缩后的文件会覆盖原源文件  |
 | outputDir     | `string`   |  输出目录, 源文件不会改变，压缩后的文件会保存在此 |
+| quiet         | `boolean`  |  不输出 tinypng 压缩进度信息，但仍然会输出压缩结果 |
 
 **"backupDir" 和 "outputDir" 只需要设置一个即可，系统会优先使用 "outputDir"，如果两个都没设置，则会直接替换原文件（你可以大胆的相信 TinyPNG 的压缩质量）**
 
@@ -111,6 +112,7 @@ const TinypngWebpackPlugin = require('@mora/tinypng').TinypngWebpackPlugin
 | --------      | -----      | ----- |
 | config        | `string`   |  指定配置文件  |
 | filter        | `function` |  过滤出可以压缩的 module 来 |
+| quiet         | `boolean`  |  设置为 true 则不会输出 tinypng 的压缩进度 |
 
 
 ## 推荐用法

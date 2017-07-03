@@ -94,27 +94,36 @@ export function writeFileSync(filepath: string, buffer: Buffer | string) {
   fs.writeFileSync(filepath, buffer)
 }
 
-export function runProgressTasks(tasks: any[], callback, {indent = ''} = {}) {
+export function runProgressTasks(tasks: any[], callback, {indent = '', quiet = false} = {}) {
   let total = tasks.length
   if (total === 0) return callback()
 
   let frames = ['-', '\\', '|', '/']
   let frameIndex = 0
   let finishedCount = 0
+  let sid
 
   let refresh = () => {
-    logUpdate(`${indent}Tinypng processing ${finishedCount}/${total} ${frames[frameIndex = ++frameIndex % frames.length]}`)
+    if (!quiet) {
+      logUpdate(`${indent}Tinypng processing ${finishedCount}/${total} ${frames[frameIndex = ++frameIndex % frames.length]}`)
+    }
+  }
+  let done = () => {
+    if (!quiet) {
+      logUpdate.clear()
+      clearInterval(sid)
+    }
+    callback()
   }
 
-  let sid = setInterval(refresh, 80)
+  if (!quiet) sid = setInterval(refresh, 80)
 
   let next = (name) => {
     finishedCount++
+    refresh()
 
     if (finishedCount === total) {
-      logUpdate.clear()
-      clearInterval(sid)
-      callback()
+      quiet ? done() : setTimeout(done, 100)
     }
   }
 

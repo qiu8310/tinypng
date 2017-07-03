@@ -44,7 +44,8 @@ cli({
   't | tokens': '<string> tinypng 需要使用的 token，多个 token 请用逗号分隔，可以在官网 https://tinypng.com/ 用邮箱注册即可得到',
   'r | recordFile': '<string> 记录文件，记录 token 使用或过期情况，给系统用的，对用户无意义，推建设置',
   'p | proxy': '<string> 使用 tinypng 可能要翻墙，可以在此设置代理',
-  'resize': '<string> resize 图片，参数格式: "method|width|height"，注意：使用了此选项不会对图片压缩'
+  'resize': '<string> resize 图片，参数格式: "method|width|height"，注意：使用了此选项不会对图片压缩',
+  'quiet': '<bool> 不输出 tinypng 压缩进度信息，但仍然会输出压缩结果'
 })
 .parse(
   function(res) {
@@ -113,7 +114,8 @@ cli({
       }),
       callback,
       {
-        indent: '  '
+        indent: '  ',
+        quiet: config.quiet === true
       }
     )
   }
