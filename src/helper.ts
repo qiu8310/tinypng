@@ -105,7 +105,7 @@ export function runProgressTasks(tasks: any[], callback, {indent = '', quiet = f
 
   let refresh = () => {
     if (!quiet) {
-      logUpdate(`${indent}Tinypng processing ${finishedCount}/${total} ${frames[frameIndex = ++frameIndex % frames.length]}`)
+      logUpdate(`${indent}processing ${finishedCount}/${total} ${frames[frameIndex = ++frameIndex % frames.length]}`)
     }
   }
   let done = () => {
