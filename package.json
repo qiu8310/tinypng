@@ -1,6 +1,6 @@
 {
   "name": "@mora/tinypng",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "基于 tinypng 封装的一个支持 `nodejs`、`命令行`和`webpack`的图片压缩工具",
   "main": "lib/index.js",
   "bin": {
