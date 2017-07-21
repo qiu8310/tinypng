@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "JSON schema for NPM package @mora/tinypng config file",
+  "type": "object",
+  "properties": {
+    "tokens": {
+      "description": "tinypng 需要使用的 token，可以在网站 https://tinypng.com/developers 上申请",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "backupDir": {
+      "description": "备份目录，源文件会保存在这里，压缩后的文件会覆盖原源文件",
+      "type": "string"
+    },
+    "outputDir": {
+      "description": "输出目录, 源文件不会改变，压缩后的文件会保存在此；`backupDir` 和 `outputDir` 只需要设置一个即可，优先使用 `outputDir`",
+      "type": "string"
+    },
+    "cacheDir": {
+      "description": "缓存 tinypng 处理后的文件，避免重复处理，节省 api 调用次数",
+      "type": "string"
+    },
+    "recordFile": {
+      "description": "记录文件，记录 token 使用或过期情况，给系统用的，对用户无意义，推建设置",
+      "type": "string"
+    },
+    "proxy": {
+      "description": "通过代理服务器访问 tinypng，比如可以设置为 http://user:pass@192.168.0.1:8080",
+      "type": "string"
+    },
+    "quiet": {
+      "description": "不输出 tinypng 压缩进度信息，但仍然会输出压缩结果",
+      "type": "boolean"
+    }
+  }
+}

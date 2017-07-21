@@ -55,8 +55,8 @@
   "dependencies": {
     "fs-extra": "~3.0.1",
     "log-update": "2.0.0",
-    "mora-common": "0.0.10",
-    "mora-scripts": "1.6.4",
+    "mora-common": "~0.0.10",
+    "mora-scripts": "~1.6.4",
     "svgo": "~0.7.2",
     "tinify": "~1.5.0",
     "webpack-sources": "~1.0.1"
