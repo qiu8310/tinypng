@@ -9,7 +9,10 @@
   "typings": "lib/index.d.ts",
   "scripts": {
     "test": "jest",
-    "release": "tslint src/**.ts && npm run test && tsc && snpm publish && cnpm sync @mora/tinypng"
+    "lint": "tslint src/**.ts",
+    "preversion": "npm run lint && npm test",
+    "release": "npm version patch -m 'chore: bump patch version'",
+    "postversion": "git push --follow-tags && snpm publish && cnpm sync @mora/tinypng"
   },
   "author": "Mora <qiuzhongleiabc@126.com> (https://qiu8310.github.io/)",
   "repository": {

@@ -2084,8 +2084,8 @@ mora-common@~0.0.10:
   resolved "http://registry.npm.taobao.org/mora-common/download/mora-common-0.0.18.tgz#2b02fb6ad53991bc13e9941e2b83794e42b2e742"
 
 mora-scripts@~1.6.4:
-  version "1.6.7"
-  resolved "http://registry.npm.taobao.org/mora-scripts/download/mora-scripts-1.6.7.tgz#c54cab4b7ec682707f90819f2616dd2618df53df"
+  version "1.6.8"
+  resolved "http://registry.npm.taobao.org/mora-scripts/download/mora-scripts-1.6.8.tgz#aca0a55a8bb2173dcc872ada5c83735bfc32a5c8"
   dependencies:
     cross-spawn "5.1.0"
     semver-regex "1.0.0"

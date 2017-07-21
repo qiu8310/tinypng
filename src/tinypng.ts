@@ -71,8 +71,8 @@ export default class {
     this.svgo = new SVGO(option.svgo || {plugins: [{removeTitle: true}]})
   }
 
-  tiny(source: ITinypngSource, option?: ITinypngProcessOption): Promise<Buffer>
-  tiny(source: ITinypngSource, target?: ITinypngTarget, option?: ITinypngProcessOption): Promise<Buffer> {
+  // tiny(source: ITinypngSource, option?: ITinypngProcessOption): Promise<Buffer>
+  tiny(source: ITinypngSource, target?: ITinypngTarget | ITinypngProcessOption, option?: ITinypngProcessOption): Promise<Buffer> {
     return new Promise((resolve, reject) => {
       if (typeof target === 'object') {
         option = target
@@ -120,7 +120,7 @@ export default class {
     })
   }
 
-  private tinySuccess(buffer: Buffer, target: ITinypngTarget, resolve, reject) {
+  private tinySuccess(buffer: Buffer, target, resolve, reject) {
     if (!target) resolve(buffer)
     fs.writeFile(target, buffer, (err) => {
       if (err) reject(err)
