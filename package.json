@@ -10,8 +10,9 @@
   "scripts": {
     "test": "jest",
     "lint": "tslint src/**.ts",
+    "build": "tsc",
     "preversion": "npm run lint && npm test",
-    "release": "npm version patch -m 'chore: bump patch version'",
+    "release": "npm run build && npm version patch -m 'chore: bump patch version'",
     "postversion": "git push --follow-tags && snpm publish && cnpm sync @mora/tinypng"
   },
   "author": "Mora <qiuzhongleiabc@126.com> (https://qiu8310.github.io/)",
