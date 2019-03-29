@@ -7,6 +7,7 @@
     "member-access": false,
     "new-parens": true,
     "no-arg": true,
+    "no-reference": false,
     "no-bitwise": true,
     "no-conditional-assignment": true,
 
